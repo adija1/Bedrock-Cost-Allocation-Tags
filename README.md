@@ -60,9 +60,8 @@ python converse_bot_NOVA.py
 
 ## Documentation
 
-A very well written blog about the feature:
-https://aws.amazon.com/blogs/machine-learning/track-allocate-and-manage-your-generative-ai-cost-and-usage-with-amazon-bedrock/
+A very well written [blog](https://aws.amazon.com/blogs/machine-learning/track-allocate-and-manage-your-generative-ai-cost-and-usage-with-amazon-bedrock/) about the feature.
 
-Amazon Bedrock documentation on Inference Profile:
-https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles.html
+Amazon Bedrock [documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles.html) on Inference Profile.
 
+Creating [Application Inference Profile](https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles-create.html)

@@ -1,8 +1,9 @@
 # Bedrock-Cost-Allocation-Tags
 
 ## The what
-Amazon Bedrock supports the creation and tagging of Application Inference Profiles, enabling better cost management for your AI workloads.
-Inference profile is a set of configuration settings that control how a foundation model is used 
+Amazon Bedrock recently introduced cross-region inference, enabling automatic routing of inference requests across AWS Regions. This feature uses system-defined inference profiles (predefined by Amazon Bedrock), which configure different model Amazon Resource Names (ARNs) from various Regions and unify them under a single model identifier (both model ID and ARN). While this enhances flexibility in model usage, it doesn’t support attaching custom tags for tracking, managing, and controlling costs across workloads and tenants.
+
+To bridge this gap, Amazon Bedrock now introduces application inference profiles, a new capability that allows organizations to apply custom cost allocation tags to track, manage, and control their Amazon Bedrock on-demand model costs and usage. This capability enables organizations to create custom inference profiles for Bedrock base foundation models, adding metadata specific to tenants, thereby streamlining resource allocation and cost monitoring across varied AI applications.
 
 ## The Why
 By tagging Application Inference profiles it is easier to track and monitor costs & usage of specific workloads in Bedrock
@@ -10,10 +11,12 @@ By tagging Application Inference profiles it is easier to track and monitor cost
 ## The How
 This project contains the following files for ease of deployment of several application inference profiles and chatbots for testing the profiles.
 *bedrock-inference-profiles.yaml* - cloudformation stack for creating two Application Inference Profiles:
+
 1. Travel Application Inference profile using Claude Sonnet 3.5, tagged with Key: Application, Value: TravelChatBot, Key: CostCenter, Value: Travel
 2. Insurance Application Inference Profile using Amazon Titan Lite V1, tagged with Key: Application, Value: InsuranceChatBot, Key: CostCenter, Value: Insurance 
 
 *bedrock-inference-profiles-nova.yaml* - cloudformation stack for creating Travel & Insurance Application Inference Profile using Nova Pro model.
+
 1. Travel Application Inference profile using Amazon Nova Pro, tagged with Key: Application, Value: TravelChatBotNOVA, Key: CostCenter, Value: Travel
 2. Insurance Application Inference Profile using Amazon Nova pro, tagged with Key: Application, Value: InsuranceChatBotNOVA, Key: CostCenter, Value: Insurance
    
@@ -95,3 +98,4 @@ Creating [Application Inference Profile](https://docs.aws.amazon.com/bedrock/lat
 ## For vieweing the results in Cost Explorer
 1. After Application Inference Profiles are created it takes roughly 48 hours for the tags to appear in [Cost Allocation Tags](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/activating-tags.html)
 2. Once these tags appear in CAT they need to be activated. Once activated it takes roughly 48 hours to appear in Cost explorer.
+

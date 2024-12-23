@@ -75,7 +75,7 @@ For testing the Nova Application Inference Profiles:
 python converse_bot_NOVA.py 
 ```
 
-## Cleanup
+### Cleanup
 To delete the CloudFormation stack, use:
 
 ```bash
@@ -87,7 +87,7 @@ aws cloudformation delete-stack --stack-name BedrockChatBotsNova
 ```
 
 
-## Documentation
+### Documentation
 
 A very well written [blog](https://aws.amazon.com/blogs/machine-learning/track-allocate-and-manage-your-generative-ai-cost-and-usage-with-amazon-bedrock/) about the feature.
 
@@ -95,7 +95,7 @@ Amazon Bedrock [documentation](https://docs.aws.amazon.com/bedrock/latest/usergu
 
 Creating [Application Inference Profile](https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles-create.html)
 
-## For vieweing the results in Cost Explorer
+### For vieweing the results in Cost Explorer
 1. After Application Inference Profiles are created it takes roughly 48 hours for the tags to appear in [Cost Allocation Tags](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/activating-tags.html)
 2. Once these tags appear in CAT they need to be activated. Once activated it takes roughly 48 hours to appear in Cost explorer.
 

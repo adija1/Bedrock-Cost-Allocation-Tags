@@ -38,9 +38,13 @@ aws cloudformation deploy --template-file bedrock-inference-profiles-nova.yaml -
 ### Additional AWS Commands
 
 To retrieve resources tagged with a specific key and value, use:
+```bash
 aws resourcegroupstaggingapi get-resources --tag-filters Key=Application,Values=InsuranceChatBot
+```
 or
+```bash
 aws resourcegroupstaggingapi get-resources --tag-filters Key=Application,Values=InsuranceChatBotNova
+```
 
 ### Usage
 For testing the Sonnet & Titan:

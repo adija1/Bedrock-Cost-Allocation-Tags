@@ -21,6 +21,7 @@ This project contains the following files for ease of deployment of several appl
 2. Insurance Application Inference Profile using Amazon Nova pro, tagged with Key: Application, Value: InsuranceChatBotNOVA, Key: CostCenter, Value: Insurance
    
 *converse_bot.py* - chat app that will send prompts to the Sonnet & Titan Application Inference Profiles.
+
 *converse_bot_NOVA.py* - chat app that will send prompts to the Nova Application Inference Profiles.
 
 ### Prerequisites
@@ -42,12 +43,21 @@ pip install boto3
 ```
 ### Deployment
 
-The following will create two Application Inference Profiles - TravelChatBot using Claude Sonnet 3.5 & InsuranceChatBot using Amazon Titan-text-lite-v1
+1. clone the repo
+```bash
+git clone https://github.com/adija1/Bedrock-Cost-Allocation-Tags
+```
+2. Change dir
+```bash
+cd Bedrock-Cost-Allocation-Tags/
+```
+
+3. The following will create two Application Inference Profiles - TravelChatBot using Claude Sonnet 3.5 & InsuranceChatBot using Amazon Titan-text-lite-v1
 ```bash
 aws cloudformation deploy --template-file bedrock-inference-profiles.yaml --stack-name BedrockChatBots
 ```
 
-The following will create two Application Inference Profiles - TravelChatBotNova & InsuranceChatBotNova both using Amazon Nova Pro models.
+4. The following will create two Application Inference Profiles - TravelChatBotNova & InsuranceChatBotNova both using Amazon Nova Pro models.
 ```bash
 aws cloudformation deploy --template-file bedrock-inference-profiles-nova.yaml --stack-name BedrockChatBotsNova
 ```

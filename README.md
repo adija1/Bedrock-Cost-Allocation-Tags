@@ -57,3 +57,12 @@ For testing the Nova:
 ```bash
 python converse_bot_NOVA.py 
 ```
+
+## Documentation
+
+A very well written blog about the feature:
+https://aws.amazon.com/blogs/machine-learning/track-allocate-and-manage-your-generative-ai-cost-and-usage-with-amazon-bedrock/
+
+Amazon Bedrock documentation on Inference Profile:
+https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles.html
+

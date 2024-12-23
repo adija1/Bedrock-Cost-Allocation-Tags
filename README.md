@@ -58,6 +58,18 @@ For testing the Nova:
 python converse_bot_NOVA.py 
 ```
 
+## Cleanup
+To delete the CloudFormation stack, use:
+
+```bash
+aws cloudformation delete-stack --stack-name BedrockChatBots
+```
+
+```bash
+aws cloudformation delete-stack --stack-name BedrockChatBotsNova
+```
+
+
 ## Documentation
 
 A very well written [blog](https://aws.amazon.com/blogs/machine-learning/track-allocate-and-manage-your-generative-ai-cost-and-usage-with-amazon-bedrock/) about the feature.

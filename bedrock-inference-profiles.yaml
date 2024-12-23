@@ -1,0 +1,74 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::LanguageExtensions
+Description: >
+  Creates Bedrock Application Inference Profiles for TravelChatBot and InsuranceChatBot.
+
+Parameters:
+  pTravelModelSource:
+    Type: String
+    Description: >
+      The Foundation Model ARN for the TravelChatBot.
+    Default: arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-5-sonnet-20240620-v1:0
+
+  pInsuranceModelSource:
+    Type: String
+    Description: >
+      The Foundation Model ARN for the InsuranceChatBot.
+    Default: arn:aws:bedrock:us-east-1::foundation-model/amazon.titan-text-lite-v1
+
+Resources:
+  TravelChatBotInferenceProfile:
+    Type: AWS::Bedrock::ApplicationInferenceProfile
+    Properties:
+      InferenceProfileName: !Sub "${AWS::StackName}-TravelChatBot"
+      Description: Inference profile for the Travel ChatBot.
+      ModelSource:
+        CopyFrom: !Ref pTravelModelSource
+      Tags:
+        - Key: Application
+          Value: TravelChatBot
+        - Key: CostCenter
+          Value: Travel
+
+  InsuranceChatBotInferenceProfile:
+    Type: AWS::Bedrock::ApplicationInferenceProfile
+    Properties:
+      InferenceProfileName: !Sub "${AWS::StackName}-InsuranceChatBot"
+      Description: Inference profile for the Insurance ChatBot.
+      ModelSource:
+        CopyFrom: !Ref pInsuranceModelSource
+      Tags:
+        - Key: Application
+          Value: InsuranceChatBot
+        - Key: CostCenter
+          Value: Insurance
+
+  TravelChatBotParameter:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: /bedrock/inference-profiles/TravelChatBot
+      Description: ARN for the TravelChatBot inference profile.
+      Type: String
+      Value: !Sub "${TravelChatBotInferenceProfile}"
+      Tags:
+        Application: TravelChatBot
+        CostCenter: Travel
+
+  InsuranceChatBotParameter:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: /bedrock/inference-profiles/InsuranceChatBot
+      Description: ARN for the InsuranceChatBot inference profile.
+      Type: String
+      Value: !Sub "${InsuranceChatBotInferenceProfile}"
+      Tags:
+        Application: InsuranceChatBot
+        CostCenter: Insurance
+
+Outputs:
+  TravelChatBotInferenceProfileArn:
+    Description: ARN of the TravelChatBot Inference Profile
+    Value: !Sub "arn:aws:bedrock:${AWS::Region}:${AWS::AccountId}:application-inference-profile/${TravelChatBotInferenceProfile}"
+  InsuranceChatBotInferenceProfileArn:
+    Description: ARN of the InsuranceChatBot Inference Profile
+    Value: !Sub "arn:aws:bedrock:${AWS::Region}:${AWS::AccountId}:application-inference-profile/${InsuranceChatBotInferenceProfile}"

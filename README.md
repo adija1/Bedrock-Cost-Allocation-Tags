@@ -30,7 +30,7 @@ The following will create two Application Inference Profiles - TravelChatBot usi
 aws cloudformation deploy --template-file bedrock-inference-profiles.yaml --stack-name BedrockChatBots
 ```
 
-The following will create two Application Inference Profiles - TravelChatBotNova & InsuranceChatBot both using Amazon Nova Pro models.
+The following will create two Application Inference Profiles - TravelChatBotNova & InsuranceChatBotNova both using Amazon Nova Pro models.
 ```bash
 aws cloudformation deploy --template-file bedrock-inference-profiles-nova.yaml --stack-name BedrockChatBotsNova
 ```

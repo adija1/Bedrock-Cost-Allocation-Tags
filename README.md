@@ -109,3 +109,5 @@ Creating [Application Inference Profile](https://docs.aws.amazon.com/bedrock/lat
 1. After Application Inference Profiles are created it takes roughly 48 hours for the tags to appear in [Cost Allocation Tags](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/activating-tags.html)
 2. Once these tags appear in CAT they need to be activated. Once activated it takes roughly 48 hours to appear in Cost explorer.
 
+![image](https://github.com/user-attachments/assets/a8971558-e805-4a8d-b7c2-b80e9242ee0b)
+

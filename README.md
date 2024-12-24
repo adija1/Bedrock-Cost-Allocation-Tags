@@ -29,7 +29,7 @@ This project contains the following files for ease of deployment of several appl
 
 ### Prerequisites
 
-This setup was tested on us-east-1 
+This setup was tested on us-east-1. If you use the AWS Cloudshell you can skip the this part and go striaght to the Depolyment step.
 
 1. Ensure you have Python 3.10 installed on your system. You can download it from the [official Python website](https://www.python.org/downloads/).
 2. Install AWS CLI [AWS CLI installation guide](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).

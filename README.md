@@ -1,5 +1,7 @@
 # Bedrock-Cost-Allocation-Tags
 
+### This repository demonstrates how to use cost allocation tags in Amazon Bedrock. It includes a demo app that shows this in practice. If you found this repo useful, please :star:  it. Thx.
+
 ## The what
 Amazon Bedrock recently introduced cross-region inference, enabling automatic routing of inference requests across AWS Regions. This feature uses system-defined inference profiles (predefined by Amazon Bedrock), which configure different model Amazon Resource Names (ARNs) from various Regions and unify them under a single model identifier (both model ID and ARN). While this enhances flexibility in model usage, it doesn’t support attaching custom tags for tracking, managing, and controlling costs across workloads and tenants.
 

@@ -12,6 +12,7 @@ By tagging Application Inference profiles it is easier to track and monitor cost
 
 ## The How
 This project contains the following files for ease of deployment of several application inference profiles and chatbots for testing the profiles.
+
 *bedrock-inference-profiles.yaml* - cloudformation stack for creating two Application Inference Profiles:
 
 1. Travel Application Inference profile using Claude Sonnet 3.5, tagged with Key: Application, Value: TravelChatBot, Key: CostCenter, Value: Travel

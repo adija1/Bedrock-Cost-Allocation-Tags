@@ -85,7 +85,7 @@ or
 aws bedrock list-inference-profiles --type-equals APPLICATION --query 'inferenceProfileSummaries[?inferenceProfileName==`BedrockChatBotsNOVA-TravelChatBot`]'
 ```
 
-### Usage
+### Usage (calling the inference using a demo chatbot)
 For testing the Sonnet & Titan Application Inference Profiles:
 
 ```bash

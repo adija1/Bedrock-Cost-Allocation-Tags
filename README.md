@@ -67,13 +67,22 @@ aws cloudformation deploy --template-file bedrock-inference-profiles-nova.yaml -
 
 ### Additional AWS Commands
 
-To retrieve resources tagged with a specific key and value, use:
+To list the Inference profiles created using the first CF Stack (Claude & Titan)
 ```bash
-aws resourcegroupstaggingapi get-resources --tag-filters Key=Application,Values=InsuranceChatBot
+aws bedrock list-inference-profiles --type-equals APPLICATION --query 'inferenceProfileSummaries[?inferenceProfileName==`BedrockChatBots-TravelChatBot`]'
 ```
 or
 ```bash
-aws resourcegroupstaggingapi get-resources --tag-filters Key=Application,Values=InsuranceChatBotNova
+aws bedrock list-inference-profiles --type-equals APPLICATION --query 'inferenceProfileSummaries[?inferenceProfileName==`BedrockChatBots-InsuranceChatBot`]'
+```
+
+To list the Inference profiles created using the second CF Stack (Nova)
+```bash
+aws bedrock list-inference-profiles --type-equals APPLICATION --query 'inferenceProfileSummaries[?inferenceProfileName==`BedrockChatBotsNOVA-InsuranceChatBot`]'
+```
+or
+```bash
+aws bedrock list-inference-profiles --type-equals APPLICATION --query 'inferenceProfileSummaries[?inferenceProfileName==`BedrockChatBotsNOVA-TravelChatBot`]'
 ```
 
 ### Usage

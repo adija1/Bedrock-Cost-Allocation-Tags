@@ -42,6 +42,10 @@ aws configure
 4. Ensure you have `pip` installed, then install the required Python packages by running:
 
 ```bash
+python -m venv .cost_allocation_tags
+```
+
+```bash
 pip install boto3
 ```
 ### Deployment
